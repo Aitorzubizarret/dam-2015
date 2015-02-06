@@ -28,7 +28,12 @@ Para ver el estado del repositorio
 
 Para añadir los cambios creados al repositorio:
 - `git add -A`
+- `git add FICHERO`
+- `git add DIRECTORIO\`
+
+Para confirmar los cambios y que se suban definitivamente al repositorio
 - `git commit -m "mensaje"`
+
 
 El primer comando nos sirve para visualizar que archivos se van a añadir, y el commit confirmará los cambios.
 
