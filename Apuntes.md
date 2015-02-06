@@ -38,7 +38,7 @@ Para confirmar los cambios y que se suban definitivamente al repositorio
 El primer comando nos sirve para visualizar que archivos se van a añadir, y el commit confirmará los cambios.
 
 Para guardar los cambios de nuestro repositorio, y mantener así una copia de seguridad en GitHub
-- `git push origen master`
+- `git push origin master`
 
 Actualizar nuestro repositorio local
 - `git pull`
@@ -56,7 +56,10 @@ Archivos ocultos
 Instalaremos el gestor de paquetes [Package Control](https://packagecontrol.io)
 
 Paquetes que instalaremos
-Emmet
+- Emmet
+
+### Paquete Emmet
+Documentación de emmet [en su web](http://docs.emmet.io/)
 
 ## Markdown
 Guia
