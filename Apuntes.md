@@ -12,8 +12,8 @@ Instalación de GIT en ubuntu mediante terminal
 - `sudo apt-get install git`
 
 ### Configuración de nuestra cuenta e identidad
-- `git config --global user.email "aitorzubizarreta@yahoo.es"`
-- `git config --global user.name "aitorzubizarret"`
+- `git config --global user.email "email"`
+- `git config --global user.name "user"`
 
 Si queremos saber los datos de nuestra cuenta
 - `git config --list`
