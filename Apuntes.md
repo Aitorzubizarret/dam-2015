@@ -35,6 +35,9 @@ El primer comando nos sirve para visualizar que archivos se van a añadir, y el 
 Para guardar los cambios de nuestro repositorio, y mantener así una copia de seguridad en GitHub
 - `git push origen master`
 
+Actualizar nuestro repositorio local
+- `git pull`
+
 Links de interes
 - http://guides.railsgirls.com/github/
 - https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
