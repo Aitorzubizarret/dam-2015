@@ -1,69 +1,102 @@
-# Apuntes
+# APUNTES
 Apuntes del curso Desarrollo de Aplicaciones Móviles :iphone:
 
 ## Apache
-Instalación de Apache en ubuntu mediante terminal
-- `sudo apt-get install apache2`
-
-## Git + GitHub
+Servidor web que utilizaremos en las prácticas de nuestros ejercicios de HTML + CSS + JavaScript.
 
 ### Instalación
-Instalación de GIT en ubuntu mediante terminal
-- `sudo apt-get install git`
+Instalación de apache a través del termina.
 
-### Configuración de nuestra cuenta e identidad
-- `git config --global user.email "email"`
-- `git config --global user.name "user"`
+    sudo apt-get install apache2
 
-Si queremos saber los datos de nuestra cuenta
-- `git config --list`
+### Configuración de hosts virtuales
+* http://foundationphp.com/tutorials/vhosts_mamp.php
+* http://clickontyler.com/virtualhostx/index2.php
+
+## Git + GitHub
+Software de control de versiones que utilizaremos en nuestro desarrollo. Utilizaremos GitHub para tener una copia de seguridad de nuestro repositorio local.
+
+### Instalación
+Instalación de git a través del termina.
+
+    sudo apt-get install git
+
+### Configuración de usuario
+Tendremos que configurar nuestro usuario, email y nombre, para que el software sepa quien es el autor de los cambios. Tendremos que usar el mismo email que hemos usado a la hora de crear nuestra cuenta de GitHub.
+
+    git config --global user.email "email"
+    git config --global user.name "user"
+
+En caso de que queramos saber los datos de configuración de nuestro repositorio: 
+* Nombre de usuario
+* Email
+* Dirección del repositorio maestro
+* ...
+
+    git config --list
 
 ### Clonar un repositorio de GitHub
-Primero tendremos que posicionarnos en la carpeta donde queremos descargarlo
-- `git clone URL`
-La URL la obtendremos desde GitHub
+Primero tendremos que posicionarnos en la carpeta de nuestro equipo donde queremos descargarlo, y después tendremos que saber la URL del repositorio de GitHub que queremos clonar. La podremos obtener en la web de GitHub, dentro de nuestro repositorio, debajo del menu vertical que aparece a la derecha.
 
-Para ver el estado del repositorio
-- `git status`
+Por ejemplo, la URL de este repositorio es https://github.com/Aitorzubizarret/dam-2015.git
 
-Para añadir los cambios creados al repositorio:
-- `git add -A`
-- `git add FICHERO`
-- `git add DIRECTORIO\`
+    git clone URL
+
+###Para ver el estado del repositorio
+
+    git status
+
+###Para añadir los cambios creados al repositorio:
+
+    git add -A
+    git add FICHERO
+    git add DIRECTORIO\
+    
 
 Para confirmar los cambios y que se suban definitivamente al repositorio
-- `git commit -m "mensaje"`
+
+    git commit -m "mensaje"
 
 
 El primer comando nos sirve para visualizar que archivos se van a añadir, y el commit confirmará los cambios.
 
-Para guardar los cambios de nuestro repositorio, y mantener así una copia de seguridad en GitHub
-- `git push origin master`
+###Para guardar los cambios de nuestro repositorio, y mantener así una copia de seguridad en GitHub
 
-Actualizar nuestro repositorio local
-- `git pull`
+    git push origin master
 
-Links de interes
-- http://guides.railsgirls.com/github/
-- https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
-- http://www.git-tower.com/learn/
+###Actualizar nuestro repositorio local
+
+    git pull
+
+Links de interes:
+* http://es.wikipedia.org/wiki/Git
+* http://guides.railsgirls.com/github/
+* https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+* http://www.git-tower.com/learn/
 
 ## Terminal
 Archivos ocultos
-- `ls -la`
+
+    ls -la
 
 ## Sublime Text
 Instalaremos el gestor de paquetes [Package Control](https://packagecontrol.io)
 
 Paquetes que instalaremos
-- Emmet
+* Emmet
 
 ### Paquete Emmet
 Documentación de emmet [en su web](http://docs.emmet.io/)
 
 ## Markdown
 Guia
-- https://guides.github.com/features/mastering-markdown/
+* https://guides.github.com/features/mastering-markdown/
 
 Emoji
-- http://www.emoji-cheat-sheet.com
+* http://www.emoji-cheat-sheet.com
+
+Links de interes:
+* http://daringfireball.net/projects/markdown/basics
+* http://macdown.uranusjr.com
+* http://25.io/mou/
+* http://computers.tutsplus.com/tutorials/introducing-markdown-on-os-x--cms-20764
