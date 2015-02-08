@@ -10,6 +10,17 @@ Instalación de apache a través del termina.
     sudo apt-get install apache2
 
 ### Configuración de hosts virtuales
+Primero escribimos en el documento hosts que se encuentra en /private/etc/
+
+    sudo nano /private/etc/hosts
+
+Descomentamos la línea de virtual hosts para activarla
+
+    # Virtual hosts
+    # Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+    
+
+
 * http://foundationphp.com/tutorials/vhosts_mamp.php
 * http://clickontyler.com/virtualhostx/index2.php
 
