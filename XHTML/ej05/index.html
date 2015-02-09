@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Formulario Básico</title>
+	</head>
+	<body>
+		<h1>Rellena tu CV</h1>
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post" enctype="multipart/form-data">
+			<label for="nombre">Nombre</label>
+			<br/>
+			<input type="text" name="nombre" id="nombre">
+			<br/>
+			<label for="apellidos">Apellidos</label>
+			<br/>
+			<input type="text" name="apellidos" id="apellidos">
+			<br/>
+			<label for="contrasena">Contraseña</label>
+			<br/>
+			<input type="password" name="contrasena" id="contrasena">
+			<br/>
+			<label for="dni">DNI</label>
+			<br/>
+			<input type="text" name="dni" id="dni">
+			<br/>
+			<label for="">Sexo</label>
+			<br/>
+			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
+			<br/>
+			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
+			<br/>
+			<label for="">Incluir mi foto</label><input type="file" name="foto">
+			<br/>
+			<input type="checkbox" name="newsletter" value="1" checked="" id="newsletter"><label for="newsletter">Subscribirme al boletín de novedades</label>
+			<br/>
+			<input type="submit" value="Guardar cambios" name="enviar">
+			<input type="reset" value="Borrar los datos introducidos">
+		</form>
+	</body>
+</html>
