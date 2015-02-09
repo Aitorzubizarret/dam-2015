@@ -19,8 +19,9 @@ Descomentamos la línea de virtual hosts para activarla
     # Virtual hosts
     # Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
     
-
-
+* http://jason.pureconcepts.net/2014/11/configure-apache-virtualhost-mac-os-x/
+* http://www.abhinavsood.com/working-apache-port-80-localhost-in-mamp-or-mamp-pro/
+* http://butlerccwebdev.net/support/testingserver/install-mamp.html
 * http://foundationphp.com/tutorials/vhosts_mamp.php
 * http://clickontyler.com/virtualhostx/index2.php
 
@@ -86,7 +87,7 @@ Links de interes:
 * http://www.git-tower.com/learn/
 
 ## Terminal
-Archivos ocultos
+Si queremos ver los archivos ocultos de un directorio usando *ls* tan solo tendremos que añadirle *-la*.
 
     ls -la
 
