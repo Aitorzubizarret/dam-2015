@@ -4,91 +4,23 @@
 		<title>Formulario Básico</title>
 	</head>
 	<body>
-		<h1>Rellena tu CV - Sin get/post, sin enctype</h1>
-		<form action="http://192.168.1.65/dam-2015/XHTML/post.php">
-			<label for="nombre">Nombre</label>
-			<br/>
-			<input type="text" name="nombre">
-			<br/>
-			<label for="apellidos">Apellidos</label>
-			<br/>
-			<input type="text" name="apellidos">
-			<br/>
-			<label for="contrasena">Contraseña</label>
-			<br/>
-			<input type="password" name="contrasena">
-			<br/>
-			<label for="dni">DNI</label>
-			<br/>
-			<input type="text" name="dni">
-			<br/>
-			<label for="">Sexo</label>
-			<br/>
-			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
-			<br/>
-			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
-			<br/>
-			<label for="">Incluir mi foto</label><input type="file" name="foto">
-			<br/>
-			<label for=""></label>
-			<br/>
-			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
-			<br/>
-			<input type="submit" value="Enviar" name="Guardar">
-			<input type="reset" value="Borrar los datos introducidos">
-		</form>
-
-		<h1>Rellena tu CV - Con post</h1>
-		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post">
-			<label for="nombre">Nombre</label>
-			<br/>
-			<input type="text" name="nombre">
-			<br/>
-			<label for="apellidos">Apellidos</label>
-			<br/>
-			<input type="text" name="apellidos">
-			<br/>
-			<label for="contrasena">Contraseña</label>
-			<br/>
-			<input type="password" name="contrasena">
-			<br/>
-			<label for="dni">DNI</label>
-			<br/>
-			<input type="text" name="dni">
-			<br/>
-			<label for="">Sexo</label>
-			<br/>
-			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
-			<br/>
-			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
-			<br/>
-			<label for="">Incluir mi foto</label><input type="file" name="foto">
-			<br/>
-			<label for=""></label>
-			<br/>
-			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
-			<br/>
-			<input type="submit" value="Guardar cambios">
-			<input type="reset" value="Borrar los datos introducidos">
-		</form>
-
-		<h1>Rellena tu CV - Con post y enctype</h1>
+		<h1>Rellena tu CV</h1>
 		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post" enctype="multipart/form-data">
 			<label for="nombre">Nombre</label>
 			<br/>
-			<input type="text" name="nombre">
+			<input type="text" name="nombre" id="nombre">
 			<br/>
 			<label for="apellidos">Apellidos</label>
 			<br/>
-			<input type="text" name="apellidos">
+			<input type="text" name="apellidos" id="apellidos">
 			<br/>
 			<label for="contrasena">Contraseña</label>
 			<br/>
-			<input type="password" name="contrasena">
+			<input type="password" name="contrasena" id="contrasena">
 			<br/>
 			<label for="dni">DNI</label>
 			<br/>
-			<input type="text" name="dni">
+			<input type="text" name="dni" id="dni">
 			<br/>
 			<label for="">Sexo</label>
 			<br/>
@@ -98,11 +30,9 @@
 			<br/>
 			<label for="">Incluir mi foto</label><input type="file" name="foto">
 			<br/>
-			<label for=""></label>
+			<input type="checkbox" name="newsletter" value="1" checked="" id="newsletter"><label for="newsletter">Subscribirme al boletín de novedades</label>
 			<br/>
-			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
-			<br/>
-			<input type="submit" value="Guardar datos" name="enviar">
+			<input type="submit" value="Guardar cambios" name="enviar">
 			<input type="reset" value="Borrar los datos introducidos">
 		</form>
 	</body>

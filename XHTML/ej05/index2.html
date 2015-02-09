@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Información sobre el producto</title>
+	</head>
+	<body>
+		<h1>Select</h1>
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post">
+			<select name="so" id="">
+				<option value="" selected="selected"> - Selecciona uno - </option>
+				<option value="Windows">Windows</option>
+				<option value="Mac">Mac</option>
+				<option value="Linux">Linux</option>
+				<option value="Otro">Otro</option>
+			</select>
+			<br/><br/>
+			<select name="so[]" size="5" id="">
+				<option value=""> - Selecciona uno - </option>
+				<option value="Windows">Windows</option>
+				<option value="Mac">Mac</option>
+				<option value="Linux">Linux</option>
+				<option value="Otro">Otro</option>
+			</select>
+			<br/><br/>
+			<select name="so[]" id="" multiple="">
+				<option value=""> - Selecciona uno - </option>
+				<option value="Windows">Windows</option>
+				<option value="Mac">Mac</option>
+				<option value="Linux">Linux</option>
+				<option value="Otro">Otro</option>
+			</select>
+			<br/>
+			<input type="submit" value="enviar" name="Enviar">
+		</form>
+		<h1>Información sobre el producto</h1>
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Datos Básicos</legend>
+				<label for="nombre">Nombre</label>
+				<br/>
+				<input type="text" name="nombre" id="nombre">
+				<br/>
+				<label for="">Descripcion</label>
+				<br/>
+				<textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+				<br/>
+				<label for="">Foto</label>
+				<input type="file">
+				<br/>
+				<input type="checkbox" name="contador" id="contador">
+				<label for="contador">Añadir contador de visitas</label>
+			</fieldset>
+			<fieldset>
+				<legend>Datos Económicos</legend>
+				<label for="">Precio</label>
+				<input type="text">
+				<label for="">Impuestos</label>
+				<input type="text">
+				<label for="">Promoción</label>
+				<input type="radio" name="">
+			</fieldset>
+		</form>
+		
+		<h1>Información sobre el producto</h1>
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post" enctype="multipart/form-data">
+			<label for="nombre">Nombre</label>
+			<br/>
+			<input type="text" name="nombre" id="nombre">
+			<br/>
+			<label for="apellidos">Apellidos</label>
+			<br/>
+			<input type="text" name="apellidos" id="apellidos">
+			<br/>
+			<label for="contrasena">Contraseña</label>
+			<br/>
+			<input type="password" name="contrasena" id="contrasena">
+			<br/>
+			<label for="dni">DNI</label>
+			<br/>
+			<input type="text" name="dni" id="dni">
+			<br/>
+			<label for="">Sexo</label>
+			<br/>
+			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
+			<br/>
+			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
+			<br/>
+			<label for="">Incluir mi foto</label><input type="file" name="foto">
+			<br/>
+			<input type="checkbox" name="newsletter" value="1" checked="" id="newsletter"><label for="newsletter">Subscribirme al boletín de novedades</label>
+			<br/>
+			<input type="submit" value="Guardar cambios" name="enviar">
+			<input type="reset" value="Borrar los datos introducidos">
+		</form>
+	</body>
+</html>
