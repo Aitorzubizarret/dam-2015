@@ -22,6 +22,8 @@
 			<br/>
 			<input type="text" name="dni">
 			<br/>
+			<label for="">Sexo</label>
+			<br/>
 			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
 			<br/>
 			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
@@ -30,14 +32,14 @@
 			<br/>
 			<label for=""></label>
 			<br/>
-			<input type="checkbox" name="spam" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
+			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
 			<br/>
-			<input type="submit" value="Guardar cambios">
+			<input type="submit" value="Enviar" name="Guardar">
 			<input type="reset" value="Borrar los datos introducidos">
 		</form>
 
 		<h1>Rellena tu CV - Con post</h1>
-		<form action="http://192.168.1.65/dam-2015/XHTML/post.php">
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="post">
 			<label for="nombre">Nombre</label>
 			<br/>
 			<input type="text" name="nombre">
@@ -54,6 +56,8 @@
 			<br/>
 			<input type="text" name="dni">
 			<br/>
+			<label for="">Sexo</label>
+			<br/>
 			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
 			<br/>
 			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
@@ -62,7 +66,7 @@
 			<br/>
 			<label for=""></label>
 			<br/>
-			<input type="checkbox" name="spam" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
+			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
 			<br/>
 			<input type="submit" value="Guardar cambios">
 			<input type="reset" value="Borrar los datos introducidos">
@@ -86,6 +90,8 @@
 			<br/>
 			<input type="text" name="dni">
 			<br/>
+			<label for="">Sexo</label>
+			<br/>
 			<input type="radio" name="sexo" value="Hombre" checked=""><label for="">Hombre</label>
 			<br/>
 			<input type="radio" name="sexo" value="Mujer"><label for="">Mujer</label>
@@ -94,9 +100,9 @@
 			<br/>
 			<label for=""></label>
 			<br/>
-			<input type="checkbox" name="spam" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
+			<input type="checkbox" name="newsletter" value="1" checked=" "><label for="">Subscribirme al boletín de novedades</label>
 			<br/>
-			<input type="submit" value="Guardar cambios">
+			<input type="submit" value="Guardar datos" name="enviar">
 			<input type="reset" value="Borrar los datos introducidos">
 		</form>
 	</body>
