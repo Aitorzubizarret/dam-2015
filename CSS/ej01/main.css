@@ -6,6 +6,7 @@ body {
 /* Todos los parrafos de la pagina */
 p {
     color: #555;
+    width: 50%;
 }
 
 /* Todos los párrafos contenidos en #primero */
@@ -16,6 +17,7 @@ p {
 /* Todos los enlaces la pagina */
 a {
     color: #CC3300;
+    width: 1000px;
 }
 
 /* Los elementos "em" contenidos en #primero */
