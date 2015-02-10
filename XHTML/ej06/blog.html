@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Post 1</title>
-	<link rel="stylesheet" href="css/main.css">
+	<!--<link rel="stylesheet" href="css/experimental.css">-->
 </head>
 <body>
 	<div class="wrapper">
@@ -20,8 +20,8 @@
 		<div class="content">
 			<div class="post">
 				<h2>Travel Day</h2>
-				<h3>October22, 2001</h3>
-				<a href="">John Doe</a>,<a href="">3 comments</a>
+				<span class="dateStamp">October 22, 2011</span>
+				<a href="" class="writer">John Doe</a>, <a href="#comments" class="comments">3 comments</a>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -31,12 +31,12 @@
 				<table>
 					<thead>
 						<tr>
-							<td>Column 1</td>
-							<td>Column 2</td>
-							<td>Column 3</td>
-							<td>Column 4</td>
-							<td>Column 5</td>
-							<td>Column 6</td>
+							<th>Column 1</th>
+							<th>Column 2</th>
+							<th>Column 3</th>
+							<th>Column 4</th>
+							<th>Column 5</th>
+							<th>Column 6</th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -89,12 +89,22 @@
 					</tbody>
 				</table>
 			</div>
+			<!-- Tambnién se puede meter el formulario para añadir un artículo dentro de los comentarios
+			<div class="commentsSection">
+				<ul class="comments">
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				<div class="form">...</div>
+			</div>
+			-->
 			<div class="comments" id="comments">
 				<ul>
 					<li>
 						<img src="imagenes/user.gif" alt="Avatar">
-						<h3>stylearua</h3>
-						<h4>February 22, 2013 at 11:34 am</h4>
+						<span class="user"><a href=""></a>stylearua</span>
+						<span class="timeStamp">February 22, 2013 at 11:34 am</span>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -104,8 +114,8 @@
 					</li>
 					<li>
 						<img src="imagenes/user.gif" alt="Avatar">
-						<h3>stylearua</h3>
-						<h4>February 22, 2013 at 11:34 am</h4>
+						<span class="user">stylearua</span>
+						<span class="timeStamp">February 22, 2013 at 11:34 am</span>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -115,8 +125,8 @@
 					</li>
 					<li>
 						<img src="imagenes/user.gif" alt="Avatar">
-						<h3>stylearua</h3>
-						<h4>February 22, 2013 at 11:34 am</h4>
+						<span class="user">stylearua</span>
+						<span class="timeStamp">February 22, 2013 at 11:34 am</span>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -132,7 +142,7 @@
 			<form action="">
 				<label for="">Name</label>
 				<input type="text" name="name">
-				<label for="">Email</label>
+				<label for="">Mail (will not be published)</label>
 				<input type="text" name="email">
 				<label for="">Website</label>
 				<input type="text">
@@ -141,7 +151,7 @@
 				<input type="submit">
 			</form>
 		</div>
-		<div class="footer">&copy 2001 <a href="">John Doe</a></div>
+		<div class="footer"><span class="copyright">&copy; 2011</span> <a href="">John Doe</a></div>
 	</div>
 </body>
 </html>

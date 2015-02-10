@@ -3,119 +3,144 @@
 <head>
 	<meta charset="UTF-8">
 	<title>My Weblog</title>
-	<link rel="stylesheet" href="css/main.css">
+	<!--<link rel="stylesheet" href="css/experimental.css">-->
 </head>
 <body>
 	<div class="wrapper">
 		<div class="header">
 			<h1>My Weblog</h1>
 			<p>A lot of effort went into making this effortless.</p>
-			<ul>
+			<ul class="menu">
 				<li><a href="index.html">home</a></li>
 				<li><a href="blog.html">blog</a></li>
 				<li><a href="">gallery</a></li>
 				<li><a href="">about</a></li>
 			</ul>
+            <!-- También se puede poner de esta manera
+            <span class="menu">
+                <a href="index.html">home</a>
+                <a href="blog.html">blog</a>
+                <a href=""></a>
+                <a href=""></a>
+            </span>
+            -->
 		</div>
+        <!-- También se puede poner de esta manera
+        <div class="main">
+            <div class="posts">
+                <div class="post">
+                    <div class="postHead">
+                        <h2>Titulo del post</h2>
+                        <span>Fecha de publicación</span>
+                        <span>
+                            <a href="">Autor</a>
+                            <a href="">Comentarios</a>
+                        </span>
+                    </div>
+                    <div class="postBody">
+                        <p>Loren</p>
+                    </div>
+                </div>
+                <div class="post">...</div>
+                <div class="post">...</div>
+            </div>
+            <div class="archive">...</div>
+        </div>
+        -->
 		<div class="content">
 			<div class="post">
-				<h2>Travel Day</h2>
-				<h3>October 22, 2011</h3>
-				<a href="">John Doe</a>,<a href="blog.html#comments">3 comments</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h2><a href="">Travel Day</a></h2>
+				<span class="dateStamp">October 22, 2011</span>
+				<a href="" class="writer">John Doe</a>, <a href="blog.html#comments" class="comments">3 comments</a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 			<div class="post">
-				<h2>I'm going to Prague!</h2>
-				<h3>October 17, 2011</h3>
-				<a href="">John Doe</a>,<a href="">5 comments</a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h2><a href="">I'm going to Prague!</a></h2>
+				<span class="dateStamp">October 17, 2011</span>
+				<a href="" class="writer">John Doe</a>, <a href="" class="comments">5 comments</a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
 		<div class="calendar">
-			<ul>
+			<ol>
 				<li>
-					<h3>October</h3>
-					<ul>
+					<span class="dateStamp">October</span>
+					<ol>
 						<li>
-							<p>5 <a href="">Link</a></p>
+							<span class="dateStamp">5</span>
+							<a href="">Vos vestros servate, meos mihi linquite mores</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>September</h3>
-					<ul>
+					<span class="dateStamp">September</span>
+					<ol>
 						<li>
-							<p>30 <a href="">Link</a></p>
+							<span class="dateStamp">30</span>
+							<a href="">Ut sementem feceris</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>August</h3>
-					<ul>
+					<span class="dateStamp">August</span>
+					<ol>
 						<li>
-							<p>4 <a href="">Link</a></p>
+							<span class="dateStamp">4</span>
+							<a href="">Risu inepto res ineptior nulla est</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>July</h3>
-					<ul>
+					<span class="dateStamp">July</span>
+					<ol>
 						<li>
-							<p>4 <a href="">Link</a></p>
+							<span class="dateStamp">6</span>
+							<a href="">Vitanda est improba siren desidia</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>April</h3>
-					<ul>
+					<span class="dateStamp">April</span>
+					<ol>
 						<li>
-							<p>21 <a href="">Link</a></p>
+							<span class="dateStamp">21</span>
+							<a href="">Mendacem oportet esse memorem</a>
 						</li>
 						<li>
-							<p>7 <a href="">Link</a></p>
+							<span class="dateStamp">7</span>
+							<a href="">Libenter homines id quod volunt credunt</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>March</h3>
-					<ul>
+					<span class="dateStamp">March</span>
+					<ol>
 						<li>
-							<p>27 <a href="">Link</a></p>
+							<span class="dateStamp">27</span>
+							<a href="">Gutta cavat lapidem</a>
 						</li>
 						<li>
-							<p>21 <a href="">Link</a></p>
+							<span class="dateStamp">21</span>
+							<a href="">Amoto quaeramus seria luto</a>
 						</li>
 						<li>
-							<p>18 <a href="">Link</a></p>
+							<span class="dateStamp">18</span>
+							<a href="">Non est ars quae ad effectum casu venit</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
 				<li>
-					<h3>January</h3>
-					<ul>
+					<span class="dateStamp">January</span>
+					<ol>
 						<li>
-							<p>11 <a href="">Link</a></p>
+							<span class="dateStamp">11</span>
+							<a href="">Quid rides?...De te fabula narratur</a>
 						</li>
-					</ul>
+					</ol>
 				</li>
-			</ul>
+			</ol>
 		</div>
-		<div class="footer">&copy 2001 <a href="">John Doe</a></div>
+		<div class="footer"><span class="copyright">&copy; 2011</span> <a href="">John Doe</a></div>
 	</div>
 </body>
 </html>
