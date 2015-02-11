@@ -1,0 +1,32 @@
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.container {
+    border: 1px solid #aaa;
+    background-color: #eee;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+.fleft {
+    float: left;
+}
+.fright {
+    float: right;
+}
+.origin {
+    position: relative;
+    border: 1px solid #333;
+}
+.box {
+    position: fixed;
+    top: 10px; 
+    left: 10px;
+}
