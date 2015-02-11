@@ -112,3 +112,12 @@ Links de interes:
 * http://macdown.uranusjr.com
 * http://25.io/mou/
 * http://computers.tutsplus.com/tutorials/introducing-markdown-on-os-x--cms-20764
+
+## HTML
+
+## CSS
+    <link rel="stylesheet" href="/css/main.css" />
+    /* Comentario */
+    * {}
+    html, body {}
+    
