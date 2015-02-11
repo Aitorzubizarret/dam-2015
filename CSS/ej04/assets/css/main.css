@@ -29,6 +29,7 @@ ul {
     left: 0;
     display: none;
     border: 1px solid #ddd;
+    width: 125%;
 }
 .menu > li:hover > .submenu {
     display: block;
