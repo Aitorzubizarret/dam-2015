@@ -1,0 +1,133 @@
+body, ul, li {
+	/*
+		Para eliminar los margenes que tiene el navegador
+		y poder asi poner nuestro contenido al borde.
+	*/
+	margin: 0;
+	font-family: arial;
+}
+/*  ==================================================================
+	CLEARFIX
+	==================================================================
+*/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+/*  ==================================================================
+	WRAPPER
+	==================================================================
+*/
+.wrapper {
+	background-color: #eee;
+	width: 100%;
+	height: 100%;
+}
+/*  ==================================================================
+	MENU
+	==================================================================
+*/
+.menu {
+	background-color: #0A66A8;
+	width: 100%;
+	padding: 15px 0;
+	position: relative;
+	border-bottom: 1px solid #000;
+	float: fixed;
+	left: 0;
+	top: 0;
+}
+.logo {
+	/*
+		Cambiamos la propiedad inline del span por block,
+		de esta manera le podemos poner un ancho y centrarla.
+	*/
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	/* Fuente */
+	font-size: 1.4em;
+	color: #fff;
+}
+.userMenu {
+	list-style: none;
+	float: left;
+	position: absolute;
+	left: 80%;
+	top: 0px;
+	height: 100%;
+	border-left: 1px solid #3B8BC4;
+	border-right: 1px solid #3B8BC4;
+}
+.userMenu a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+	display: block;
+}
+.userOptions {
+	display: none;
+}
+.userMenu > li:hover > .userOptions {
+	display: block;
+}
+/*  ==================================================================
+	CONTENT
+	==================================================================
+*/
+.content {
+	background-color: #aa8833;
+	width: 75%;
+	margin: 0 auto;
+}
+.photo {
+	list-style: none;
+}
+.user {
+	background-color: #00f;
+	float: left;
+	width: 150px;
+}
+.userProfilePic {
+	width: 40px;
+	border: 1px solid #000;
+}
+.uploadedPhoto {
+	width: 450px;
+	border: 1px solid #000;
+}
+.likes {
+	background-color: #f00;
+}
+.comments {
+	background-color: #0f0;
+}
+/*  ==================================================================
+	FOOTER
+	==================================================================
+*/
+.footer {
+	background-color: #ff00ff;
+	width: 100%;
+	padding: 15px;
+}
+.footer ul {
+	width: 75%;
+	margin: 0 auto;
+}
+.footer ul li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 15px;
+	font-size: 0.75em;
+}
+.footer a {
+	text-transform: uppercase;
+}
