@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+body {
+    font: 400 9pt/1.6em Arial, Helvetica, Sans Serif;
+}
+h1, ul {
+    margin: 0;
+    padding: 0;
+}
+a,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+}
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+.header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+}
+h1 {
+    font-size: 1.1em;
+    padding-bottom: 3em;
+}
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+.header p {
+    padding-bottom: 3em;
+}
+.menu li {
+    display: inline-block;
+    /*padding: 0 10px;*/
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    /*background-color: #0f0;*/
+}
+.menu {
+    text-transform: lowercase;
+}
+.header a,
+.header a:visited,
+.header a:link,
+.header a:active {
+    color: #fff;
+    border-color: #fff;
+}
+/**********************
+    Content
+*/
+.post {
+    margin: 25px 0;
+    position: relative;
+}
+.h2 {
+    display: block;
+    color: #000;
+    font-size: 1.1em;
+    margin-bottom: 0.25em;
+}
+.h2 a {
+    color: #000;
+    border-color: #000;
+}
+.dateStamp {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.post > a {
+    color: #00e;
+    border-color: #00e;
+}
+.post p {
+    line-height: 1.8em;
+}
+.calendar a {
+    color: #00e;
+    border-color: #00e;   
+}
+.calendar li {
+    margin-bottom: 10px;
+}
+.calendar span {
+    font-weight: bold;
+}
+.day {
+    display: inline-block;
+    width: 20px;
+    text-align: right;
+    margin-right: 0.5em;
+}
+/**********************
+    Tabla
+*/
+
+
+
+/**********************
+    Comentarios
+*/
+.comments ul {
+    margin: 5px 0 20px 0;
+}
+.comments li {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0 15px 70px;
+}
+.comments img {
+    position: absolute;
+    top: 15;
+    left: 0;
+    width: 50px;
+}
+.user {
+    color: #00e;
+    border-color: #00e;
+}
+.sectionTitle {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 2px dashed #ddd;
+    padding-bottom: 5px;
+}
+/**********************
+    Formulario
+*/
+form {
+    margin-top: 10px;
+}
+form label,
+form input,
+form textarea {
+    display: block;
+}
+form label {
+    margin-bottom: 5px;
+}
+form input,
+form textarea {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+.boton {
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+/**********************
+    Footer
+*/
+.footer {
+    margin: 20px 0;
+    text-align: center;
+}
+.footer a {
+    color: #00e;
+    border-color: #00e;
+}
