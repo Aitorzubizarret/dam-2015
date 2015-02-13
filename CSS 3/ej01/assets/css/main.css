@@ -1,0 +1,35 @@
+/* Seleccionando el primer elemento del ul */
+/* 1 - Primero */
+li:first-child {
+    color: blue;
+}
+li:first-of-type {
+    color: blue;
+}
+li:nth-child(1) {
+    color: blue;
+}
+li:nth-of-type(1) {
+    color: blue;
+}
+/* 2 */
+li:nth-child(2) {
+    color:black;
+}
+/* 3 */
+li:nth-child(3) {
+    font-size: 1.5em;
+}
+/* 4 */
+li:nth-child(4) {
+    font-size: 2em;
+}
+/* 5 - Último */
+li:last-child {
+    color:blue;
+    font-size: 2.5em;
+}
+
+.wrapper .last :first-child {
+    color:blue;
+}
