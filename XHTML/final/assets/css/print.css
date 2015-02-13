@@ -1,0 +1,10 @@
+.wrapper .header {
+    background-color: #000;
+}
+.menu li {
+    display: inline-block;
+    margin-right: 3em;
+}
+.post p {
+    color: #f0f;
+}
