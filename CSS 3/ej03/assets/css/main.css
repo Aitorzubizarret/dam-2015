@@ -67,7 +67,7 @@ body
     background-image: radial-gradient(#ddd, #666);*/
     /*background-image: radial-gradient(ellipse farthest-corner at 470px 47px , #fff 20%, #eee 60%);*/
     font: 90%/1.3 "DejaVu Sans", "URW Gothic L", "Helvetica Neue", Helvetica, Arial, "Microsoft Sans Serif", sans-serif;
-    margin-top: 40px;
+    padding-top: 40px;
 }
 html,
 body {
