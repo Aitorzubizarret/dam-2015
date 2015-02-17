@@ -21,17 +21,19 @@
 
 /* ANIMACIONES Y TRANSFORMACIONES */
 #hour {
-    animation-duration: 120s;
+    animation-duration: 86400s;
     animation-iteration-count: infinite;
     animation-name: rotarHora;
+    animation-timing-function: steps(60);
 }
 #minute {
-    animation-duration: 60s;
+    animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-name: rotarHora;
+    animation-timing-function: steps(60);
 }
 #second {
-    animation-duration: 1s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-name: rotarHora;
     animation-timing-function: steps(60);
