@@ -1,0 +1,69 @@
+#container {
+    width: 500px;
+    height:500px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    font-size: 20px;
+    padding: 5px;
+
+    /* Datos de la transición */
+    transition-property: all;
+    transition-duration: 1000ms;
+    transition-timing-function: ease;
+    transition-delay: 30ms;
+}
+.box:hover {
+    /* 1 - Rotar 270 grados -> transform: rotate(270deg);
+    /* 3 - Cambiar el tamaño
+    width: 50px;
+    height: 50px;
+    */
+    /* 4 - Cambiar el color de fondo */
+    background-color: blue;
+    /* 5 - Cambiar el color del texto */
+    color: yellow;
+    /* 6 - Cambiar el tamaño del texto */
+    font-size: 18px;
+
+}
+.ex01 .box {
+    transform: translate(10px, 10px);
+}
+.ex02 .box {
+    transform: translate(10px, 20px);
+}
+.ex03 .box {
+    transform: translate(10px, 30px);
+}
+.ex04 .box {
+    transform: translate(10px, 40px);
+}
+
+/* 2 - Intercambiar las cajas */
+.ex01 .box:hover {
+    transform: translate(450px, 110px) scale(0.5, 0.5) rotate(270deg);
+    /*left: 300px;
+    top: 130px;*/
+}
+.ex02 .box:hover {
+    transform: translate(450px, -110px) scale(0.5, 0.5) rotate(270deg);
+    /*left: 300px;
+    top: 10px;*/
+}
+.ex03 .box:hover {
+    transform: translate(450px, 120px) scale(0.5, 0.5) rotate(270deg);
+    /*left: 300px;
+    /*left: 300px;
+    top: 370px;*/
+}
+.ex04 .box:hover {
+    transform: translate(450px, -120px) scale(0.5, 0.5) rotate(270deg);
+    /*left: 300px;
+    top: 250px;*/
+}
+.menu {
+    display: none;
+}
