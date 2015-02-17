@@ -1,0 +1,66 @@
+body {
+    margin: 0px;
+}
+#container{
+    background: #666 url(../img/ej03_tree.jpg) no-repeat -60px 0;
+    width: 420px;
+    height: 480px;
+    position: relative;
+}
+.snowflake {
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+
+    animation-duration: 10s, 7s;
+    animation-iteration-count: infinite;
+    animation-name: nevar, opacidad;
+}
+.snowflake.f1 {
+    font-size: 1.4em;
+    left: 60px;
+    animation-delay: 0.5s;
+}
+.snowflake.f2 {
+    font-size: 1.8em;
+    left: 120px;
+    animation-delay: 0.8s;
+}
+.snowflake.f3 {
+    font-size: 1.6em;
+    left: 200px;
+    animation-delay: 1.4s;
+}
+.snowflake.f4 {
+    font-size: 1.5em;
+    left: 280px;
+    animation-delay: 1.8s;
+}
+@keyframes nevar {
+    20% {
+        transform: translate(10px, 30px) scale(1, 1);
+    }
+    40% {
+        transform: translate(50px, 66px);
+    }
+    60% {
+        transform: translate(-50px, 166px);
+    }
+    80% {
+        transform: translate(100px, 450px) scale(0.8, 0.8);
+    }
+}
+@keyframes opacidad {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0;
+    }
+}
