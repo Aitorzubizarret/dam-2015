@@ -1,0 +1,47 @@
+.start {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5em;
+}
+
+#clock {
+    position: relative;
+    width: 378px;
+    height: 378px;
+    background-image: url('../img/clockFace.png');
+    left: 50%;
+    margin: 5em 0 0 -189px;
+}
+
+#clock div {
+    position: absolute;
+}
+
+
+/* ANIMACIONES Y TRANSFORMACIONES */
+#hour {
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    animation-name: rotarHora;
+}
+#minute {
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-name: rotarHora;
+}
+#second {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: rotarHora;
+    animation-timing-function: steps(60);
+
+}
+@keyframes rotarHora {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
