@@ -21,7 +21,7 @@
 
 /* ANIMACIONES Y TRANSFORMACIONES */
 #hour {
-    animation-duration: 86400s;
+    animation-duration: 43200s;
     animation-iteration-count: infinite;
     animation-name: rotarHora;
     animation-timing-function: steps(60);
