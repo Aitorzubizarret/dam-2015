@@ -127,4 +127,20 @@ fontsquirrel.com
 
 column break after
 column break before
-    
+
+## Node JS
+
+### Install Node JS on Ubuntu    
+sudo apt-get update
+sudo apt-get install nodejs
+
+### Install (NodeJS Package Manager) npm package manager
+sudo apt-get install npm
+
+### Check if node and npm are correctly installed
+nodejs -v #v.10.25
+npm -v #1.3.10
+
+# Install CSS and JS linters
+# npm install csslint
+npm install jshint
