@@ -139,8 +139,15 @@ sudo apt-get install npm
 
 ### Check if node and npm are correctly installed
 nodejs -v #v.10.25
-npm -v #1.3.10
+npm -v #1.3.10 "Para ver que versión esta instalada"
 
 # Install CSS and JS linters
 # npm install csslint
 npm install jshint
+
+sublimelinter
+sublimelinter-jshint
+
+## Ubuntu
+
+sudo ln -s /usr/bin/nodejs /usr/bin/node
