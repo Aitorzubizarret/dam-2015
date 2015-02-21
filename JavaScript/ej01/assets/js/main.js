@@ -2,6 +2,7 @@
 
     var validarDNI = function(dni) {
         /*
+            Primero miramos si recibimos algo
             Primero miramos si lo que recibimos es un string y
             si el string que nos dan tiene 9 carácteres.
             El formato del DNI debe ser: 8 números y 1 letra
