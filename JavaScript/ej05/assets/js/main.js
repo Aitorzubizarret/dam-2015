@@ -6,6 +6,7 @@
     var esPalindromo = function(texto){
         var respuesta = "";
 
+        
         if ((texto)&&(typeof texto === 'string')) {
             var textoGirado = texto.split("", texto.length).reverse();
             textoGirado.toString();
