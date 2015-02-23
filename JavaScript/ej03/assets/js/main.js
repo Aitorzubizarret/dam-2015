@@ -2,33 +2,24 @@
     /*
         Comprobar si es par o impar el número entero que nos pasan.
     */
-    var comprobarParImpar = function(numero) {
-        var respuesta = "";
+    var esPar = function(numero) {
+        var respuesta = false;
         if (typeof numero === 'number') {
-            if (numero%2 === 0) {
-                respuesta = "El número introducido es par";
-            } else {
-                respuesta = "El número introducido es impar";
-            }
-        } else {
-            console.log("ERROR : El valor introducido no es un número");
+            respuesta = numero%2 === 0;
         }
-
         return respuesta;
     };
 
-    console.log(comprobarParImpar(1));
-    console.log(comprobarParImpar(2));
-    console.log(comprobarParImpar(3));
-    console.log(comprobarParImpar(4));
-    console.log(comprobarParImpar(5));
-    console.log(comprobarParImpar(-5));
-    console.log(comprobarParImpar("aaa"));
-    console.log(comprobarParImpar()); // Lo mismo que undefined
-    console.log(comprobarParImpar({}));
+    // Pruebas
+    console.log(esPar(0) === true);
+    console.log(esPar(1) === false);
+    console.log(esPar(2) === true);
+    console.log(esPar(3) === false);
+    console.log(esPar(4) === true);
+    console.log(esPar(5) === false);
+    console.log(esPar(-5) === false);
+    console.log(esPar("aaa") === false);
+    console.log(esPar() === false); // Lo mismo que undefined
+    console.log(esPar({}) === false);
     
 })();
-
-/*
- hacer la funcion esPar y devolver siempre valores booleanos
-*/
