@@ -1,38 +1,55 @@
 (function(){
     /*
         Comprobar si la cadena de texto se le pasa esta formada por:
-        - Sólo mayusculas
-        - Sólo minusculas
+        - Sólo mayúsculas
+        - Sólo minúsculas
         - Una combinación de ambas
     */
-
     var comprobarCadena = function(cadena){        
         var respuesta = "";
-
         if (typeof cadena === 'string') {
-
             if (cadena === cadena.toUpperCase()) {
-                respuesta = "La cadena esta sólo en mayúsculas";
+                respuesta = "Mayúsculas";
             } else if (cadena === cadena.toLowerCase()) {
-                respuesta = "La cadea esta sólo en minúsculas";
+                respuesta = "Minúsculas";
             } else {
-                respuesta = "La cadena tiene letras mayúsculas y minúsculas";
-                throw Error("No es un string");
+                respuesta = "Mix";
             }
+        } else {
+            throw Error("No es un string");
         }
-
         return respuesta;
     };
 
-    console.log(comprobarCadena("Hola"));
-    console.log(comprobarCadena("HOLA"));
-    console.log(comprobarCadena("hola"));
-    console.log(comprobarCadena());
-    console.log(comprobarCadena(4));
-    console.log(comprobarCadena(function(){}));
-
+    // Pruebas
+    try {
+        console.log(comprobarCadena("Hola") === "Mix");
+    } catch (e) {
+        console.log("Error : No se ha introducido una cadena.");
+    }
+    try {
+        console.log(comprobarCadena("HOLA") === "Mayúsculas");
+    } catch (e) {
+        console.log("Error : No se ha introducido una cadena.");
+    }
+    try {
+        console.log(comprobarCadena("hola") === "Minúsculas");
+    } catch (e) {
+        console.log("Error : No se ha introducido una cadena.");
+    }
+    try {
+        console.log(comprobarCadena());
+    } catch (e) {
+        console.log("Error : No se ha introducido una cadena.");
+    }
+    try {
+        console.log(comprobarCadena(4));
+    } catch (e) {   
+        console.log("Error : No se ha introducido una cadena.");
+    }
+    try {
+        console.log(comprobarCadena(function(){}));
+    } catch (e) {
+        console.log("Error : No se ha introducido una cadena.");
+    }
 })();
-
-/*
-usar try catch
-*/
