@@ -4,7 +4,9 @@ window.onload = function() {
     var span = document.querySelectorAll('.adicional.oculto');
 
     // Función a ejecutar para mostrar el texto y ocultar el link
-    var muestra = function() {
+    var muestra = function(e) {
+        e.preventDefault(); // Prevenimos el comportamiento por defecto de un enlace. Ya no va a la dirección
+
         if (span.length) {
             span[0].classList.remove('oculto');
         }
