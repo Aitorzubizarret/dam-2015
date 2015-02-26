@@ -3,8 +3,9 @@
     var validarEmail = function(email) {
         if(typeof email === "string") {
             return  /^\w([\w.\-]*\w+)?@[a-zA-Z0-9]([\w.\-]*\w+)/.test(email);
+        } else {
+            return false;
         }
-        return false;
     };
 
     // Pruebas
