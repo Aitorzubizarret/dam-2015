@@ -12,6 +12,12 @@ HTMLFormElement.prototype.validate = function() {
         required : function(val) {
             // Los requeridos no pueden estar vacios
             return (val)?true:false;
+            /*
+            return value !== undefined &&
+                   value !== null &&
+                   value.length > 0 &&
+                   !/^\s+$/.test(value);
+            */
         },
         email : function(val) {
             // El email tiene que tener una dirección válida
@@ -27,6 +33,13 @@ HTMLFormElement.prototype.validate = function() {
             - Al menos una letra minúscula => [a-z]{1,}
             - Al menos una letra MAYÚSCULA => [A-Z]{1,}
             - Al menos un dígito           => [0-9]{1,}
+            */
+            /*
+            return this.required(value) &&
+                   value.length > 6 &&
+                   /[a-z]/.test(value) &&
+                   /[A-Z]/.test(value) &&
+                   /[0-9]/.test(value);
             */
             return /./.test(val);
         },
@@ -53,9 +66,11 @@ HTMLFormElement.prototype.validate = function() {
     };
 
     // Función para validar los elementos de un formulario
-    var validate = function(e) {
+    var validateForm = function(e) {
         if (requeridos.length) {
             for (var a = 0; a < requeridos.length; a++) {
+                // Para que no tengamos problemas con los indices
+                //var input = requeridos.input(a);
                 switch(requeridos[a].type) {
                     case 'text':
                         if (!validador.required(requeridos[a].value)) {
@@ -118,7 +133,15 @@ HTMLFormElement.prototype.validate = function() {
         }
     };
 
+    var validateField = function(e) {
+        console.log("ha");
+    };
+
     // Listener para ejecutar la función validate cuando se pulse el botón "submit"
-    this.addEventListener('submit', validate, false);
-    this.addEventListener('onchange', validate, false);
+    this.addEventListener('submit', validateForm, false);
+
+    // Listener a cada elemento para ejecutar la función de validar cuando pierdan el foco
+    for (var i = requeridos.length; i >= 0; i--) {
+        requeridos[i].addEventListener('onblur', validateField, false);
+    }
 };
