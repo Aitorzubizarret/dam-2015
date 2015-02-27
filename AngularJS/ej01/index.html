@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="h2">ToDO list</h1>
+        <div class="well" ng-controller="TodoController">
+            <form action="#" class="form-inline" ng-submit="addTodo()">
+                <div class="form-group">
+                    <!--
+                        En el input creamos un ng-model para que el javascript puede acceder a él.
+                        A través de la variable inputText, en el JavaScript podremos acceder. Será $scope.inputText
+                    -->
+                    <input type="text" class="form-control" ng-model="inputText">
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+            </form>
+            <!-- ul.list>li*5>input[type="checkbox"]+span -->
+            <ul class="list-unstyled">
+                <li ng-repeat="todo in todos"> <!-- Estamos cogiendo los datos de $scope.todos -->
+                    <input type="checkbox" ng-model="todo.done"> <!-- ng-model tenemos la vista el controlador sincronizado -->
+                        <span>{{ todo.task }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
