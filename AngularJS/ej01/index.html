@@ -28,7 +28,7 @@
             <ul class="list-unstyled">
                 <li ng-repeat="todo in todos"> <!-- Estamos cogiendo los datos de $scope.todos -->
                     <input type="checkbox" ng-model="todo.done"> <!-- ng-model tenemos la vista el controlador sincronizado -->
-                        <span>{{ todo.task }}</span>
+                        <span class="done-{{todo.done}}">{{ todo.task }}</span>
                 </li>
             </ul>
         </div>
