@@ -1,7 +1,6 @@
 HTMLFormElement.prototype.validate = function() {
 
 	// Elementos que queremos validar
-	var datosOk = true;
 	var required = this.querySelectorAll('.required');
 	var email = this.querySelectorAll('.email');
 	var comments = this.querySelectorAll('.comment');
@@ -11,13 +10,11 @@ HTMLFormElement.prototype.validate = function() {
     var validador = {
         required : function(val) {
             // Los required no pueden estar vacios
-            return (val)?true:false;
-            /*
-            return value !== undefined &&
-                   value !== null &&
-                   value.length > 0 &&
-                   !/^\s+$/.test(value);
-            */
+            return val !== undefined &&
+                   val !== null &&
+                   val.length > 0 &&
+                   !/^\s+$/.test(val);
+            
         },
         email : function(val) {
             // El email tiene que tener una dirección válida
@@ -25,7 +22,7 @@ HTMLFormElement.prototype.validate = function() {
         },
         comment : function(caracteres) {
             // El comments no debe exceder los 50 carácteres
-            return (caracteres>10)?false:true;
+            return (caracteres>10)?true:false;
         },
         pwd : function(val) {
             /*
@@ -34,14 +31,11 @@ HTMLFormElement.prototype.validate = function() {
             - Al menos una letra MAYÚSCULA => [A-Z]{1,}
             - Al menos un dígito           => [0-9]{1,}
             */
-            /*
-            return this.required(value) &&
-                   value.length > 6 &&
-                   /[a-z]/.test(value) &&
-                   /[A-Z]/.test(value) &&
-                   /[0-9]/.test(value);
-            */
-            return /./.test(val);
+            return this.required(val) &&
+                   val.length > 6 &&
+                   /[a-z]/.test(val) &&
+                   /[A-Z]/.test(val) &&
+                   /[0-9]/.test(val);
         },
         error : function(elemento, mensaje) {
             //elemento.style.borderColor = "#f00";
@@ -69,31 +63,30 @@ HTMLFormElement.prototype.validate = function() {
     var validateForm = function(e) {
         if (required.length) {
             for (var i = 0; i < required.length; i++) {
-                // Para que no tengamos problemas con los indices
-                //var input = required.input(a);
-                switch(required[a].type) {
+                var input = required[i]; // Para que no tengamos problemas con los indices
+                switch(input.type) {
                     case 'text':
-                        if (!validador.required(required[i].value)) {
-                            validador.error(required[i], "Este valor es requerido");
+                        if (!validador.required(input.value)) {
+                            validador.error(input, "Este valor es requerido");
                             e.preventDefault();
                         } else {
-                            validador.ok(required[i]);
+                            validador.ok(input);
                         }
                         break;
                     case 'textarea':
-                        if (!required[i].textLength) {
-                            validador.error(required[i], "Este valor es requerido");
+                        if (!input.textLength) {
+                            validador.error(input, "Este valor es requerido");
                             e.preventDefault();
                         } else {
-                            validador.ok(required[i]);
+                            validador.ok(input);
                         }
                         break;
                     case 'checkbox':
-                        if (!required[i].checked) {
-                            validador.error(required[i], "Este valor es requerido");
+                        if (!input.checked) {
+                            validador.error(input, "Este valor es requerido");
                             e.preventDefault();
                         } else  {
-                            validador.ok(required[i]);
+                            validador.ok(input);
                         }
                         break;
                 }
@@ -101,33 +94,32 @@ HTMLFormElement.prototype.validate = function() {
         }
         if (email.length) { 
             for (i = 0; i < email.length; i++) {
-                console.log(email[i].value);
-                if (!validador.email(email[i].value)) {
-                    validador.error(email[i], "El email tiene un formato incorrecto");
+                input = email[i]; // Para que no tengamos problemas con los indices
+                if (!validador.email(input.value)) {
+                    validador.error(input, "El email tiene un formato incorrecto");
                     e.preventDefault();
                 } else {
-                    validador.ok(email[i]);
+                    validador.ok(input);
                 }
             }
         }
         if (comments.length) {
             for (i = 0; i < comments.length; i++) {
-                console.log("Longitud comments en letras => " + comments[i].textLength);
-                if (!validador.comment(comments[i].textLength)) {
-                    validador.error(comments[i], "No puede tener más de 50 carácteres");
+                input = comments[i]; // Para que no tengamos problemas con los indices
+                if (validador.comment(input.textLength)) {
+                    validador.error(input, "No puede tener más de 50 carácteres");
                     e.preventDefault();
-                } else {
-                    validador.ok(comments[i]);
                 }
             }
         }
         if (passwords.length) {
-            for (var j = 0; j < passwords.length; j++) {
-                if (!validador.pwd(passwords[i].value)) {
-                    validador.error(passwords[i], "Error");
+            for (i = 0; i < passwords.length; i++) {
+                input = passwords[i]; // Para que no tengamos problemas con los indices
+                if (!validador.pwd(input.value)) {
+                    validador.error(input, "Error");
                     e.preventDefault();
                 } else {
-                    validador.ok(passwords[i]);
+                    validador.ok(input);
                 }
             }
         }
@@ -141,7 +133,7 @@ HTMLFormElement.prototype.validate = function() {
     this.addEventListener('submit', validateForm, false);
 
     // Listener a cada elemento para ejecutar la función de validar cuando pierdan el foco
-    console.log(required.length);
+    //console.log(required.length);
     /*
     for (i = required.length; i >= 0; i--) {
         required[i].addEventListener('onblur', validateField, false);
