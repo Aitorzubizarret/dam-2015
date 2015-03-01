@@ -1,28 +1,44 @@
 (function() {
 
     var validarDNI = function(dni) {
+        var respuesta;
         var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
         /*
             Comprovamos si :
             - Recibimos algo o no ({}, undefined, ...)
-            - Si el tipo de dato que definimos es un string
+            - Si el tipo de dato que recibimos es un string
             - Si el string tiene 9 carácteres, ya que el formato del DNI tiene 8 números y una letra.
         */
-        if (dni && ((typeof dni) === 'string') && (dni.length == 9)) {
-            console.log("Es un string y tiene 9 caracteres");
+        if ((typeof dni === 'string') && (dni.length == 9)) {
             // 1 - Almacenar el número y la letra en variables separadas
             var numero;
-            for (var i = 0; i <= dni.length; i++) {
-                console.log(dni.charAt(i));
-                if ((i < dni.length)&&(dni.charAt(i) =)) {
-                    numero = 
+            var letra;
+            if (/^[0-9]{8}[a-zA-Z]$/.test(dni)) {
+                numero = dni.slice(0, 8);
+                letra = dni.slice(8, 9);
+                //console.log("Número: " + numero + " Letra: " + letra);
+            } else {
+                respuesta = false;
+            }
+            
+            // 3 - Calcular letra (Dividir el número del DNI entre 23 y obtener el resto)
+            var resto;
+            if (numero) {
+                resto = numero % 23;
+                //console.log("Resto : " + resto);
+            }
+            
+            // 4 - Comprobar si la letra es la misma
+            if (resto >= 0) {
+                if (letras[resto] === letra.toUpperCase()) {
+                    respuesta = true;
+                } else {
+                    respuesta = false;
                 }
             }
-            // 2 - Número < 0 ó Número > 99999999
-            // 3 - Calcular letra (Dividir el número del DNI entre 23 y obtener el resto)
-            // 4 - Comprobar si la letra es la misma
         } else {
-            console.log("Error");
+            respuesta = false;
+            /*
             if (!dni) {
                 console.log ("La función no ha recibido ningún valor.");
             } else if ((typeof dni) !== 'string') {
@@ -30,9 +46,9 @@
             } else {
                 console.log ("La longitud de la cadena recibida no tiene 9 caracteres, tiene " + dni.length);
             }
+            */
         }
-        //console.log("Es un NoNúmero => " + isNaN(dni));
-        return true;
+        return respuesta;
     };
 
     // Pruebas
@@ -62,7 +78,17 @@
     console.log(validarDNI("A99999999") === false); // El DNI empieza con una letra en vez de un número.
 
     // Datos correcto
-    console.log(validarDNI("44341427A") === true);
-
+    console.log(validarDNI("00000000T") === true);
+    console.log(validarDNI("00000001R") === true);
+    console.log(validarDNI("00000002w") === true);
+    console.log(validarDNI("00000003a") === true);
+    console.log(validarDNI("00000004g") === true);
+    console.log(validarDNI("00000005m") === true);
+    console.log(validarDNI("00000006y") === true);
+    console.log(validarDNI("00000007f") === true);
+    console.log(validarDNI("00000008p") === true);
+    console.log(validarDNI("00000009d") === true);
+    console.log(validarDNI("00000010x") === true);
+    console.log(validarDNI("12345678z") === true);
 
 })();
