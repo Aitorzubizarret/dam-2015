@@ -80,6 +80,9 @@ El primer comando nos sirve para visualizar que archivos se van a añadir, y el 
 
     git pull
 
+###Cambiar de rama en el repositorio
+git checkout ionic
+
 Links de interes:
 * http://es.wikipedia.org/wiki/Git
 * http://guides.railsgirls.com/github/
@@ -151,3 +154,7 @@ sublimelinter-jshint
 ## Ubuntu
 
 sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+## Cordova ionic
+
+ionic serve locahost
