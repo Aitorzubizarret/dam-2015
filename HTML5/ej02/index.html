@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="player">
+            <!-- 
+                Dentro de la etiqueta de video, si ponemos un párrafo, se mostrará cuando no se pueda mostrar el video.
+                Parecido a la funcionalidad de noscript.
+            -->
+            <video id="videoPlayer" src="assets/videos/F1.webm" class="video" id="myVideo" autoplay>
+                <p>Su navegador no puede reproducir video.</p>
+            </video>
+            <div class="controls">
+                <form action="#">
+                    <button id="play" type="submit" class="control play">Play</button>
+                    <button type="submit" class="control pause">Pause</button>
+                    <button type="submit" class="control stop">Stop</button>
+                    <button type="submit" class="control forward">Avanzar</button>
+                    <button type="submit" class="control rewind">Retroceder</button>
+                    <button type="submit" class="control start">Start</button>
+                    <button type="submit" class="control end">End</button>
+                    <button type="submit" class="control fullscreen">Fullscreen</button>
+                    <input id="volumeRange" type="range" class="control range">
+                    <progress id="progress" value="5" max="20" class="control progress">5</progress>
+                </form>
+            </div>
+        </div>
+        <ul>
+            <li>Teahupoo</li>
+            <li>BMX</li>
+            <li>F1</li>
+        </ul>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

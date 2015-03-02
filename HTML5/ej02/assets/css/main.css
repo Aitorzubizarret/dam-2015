@@ -1,0 +1,19 @@
+.wrapper {
+    width: 85%;
+    margin: 15px auto;
+}
+.player {
+    height: 500px;
+    background: #444;
+    position: relative;
+}
+.controls {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 5px;
+}
+
+.video {
+    width: 100%;
+}
