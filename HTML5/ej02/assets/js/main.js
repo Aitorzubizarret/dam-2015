@@ -77,7 +77,7 @@ window.onload = function() {
     };
     var updateVideoProgress = function(e) {
         e.preventDefault();
-        progress.value = (video.currentTime * 100)/video.duration;
+        progress.value = (video.currentTime / video.duration) * 100;
     };
     /*
         SOUND
@@ -94,8 +94,8 @@ window.onload = function() {
         }
     };
     var playerVolumeControl = function(e) {
+        e.preventDefault();
         video.volume = volumeSlider.value/100;
-
     };
 
     // Añadimos los listeners a cada botón para que ejecuten su función cuando son pulsados
