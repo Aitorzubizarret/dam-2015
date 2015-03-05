@@ -72,6 +72,12 @@ Para confirmar los cambios y que se suban definitivamente al repositorio
 
 El primer comando nos sirve para visualizar que archivos se van a añadir, y el commit confirmará los cambios.
 
+###Para corregir el texto del commit
+Si el texto/mensaje que se ha escrito a la hora de hacer commit esta mal, y queremos cambiarlo, existe la función 'amend'.
+
+    git commit --amend -m "Nuevo mensaje"
+http://stackoverflow.com/questions/179123/edit-an-incorrect-commit-message-in-git
+
 ###Para guardar los cambios de nuestro repositorio, y mantener así una copia de seguridad en GitHub
 
     git push origin master
