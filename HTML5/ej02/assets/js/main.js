@@ -7,12 +7,12 @@ window.onload = function() {
     var startBtn = document.getElementById("start");
     var endBtn = document.getElementById("end");
     var fullscreenBtn = document.getElementById("fullscreen");
-    var muteOnOffBtn = document.getElementById("muteOnOff");
+    var muteBtn = document.getElementById("mute");
     var volumeSlider = document.getElementById("volumeRange");
 
     // Span de los botones
     var playPauseBtnSpan = document.getElementById("playPauseBtnText");
-    var muteOnOffSpan = document.getElementById("muteOnOffBtnIcon");
+    var muteOnOffSpan = document.getElementById("muteBtnIcon");
 
     var progress = document.getElementById("progress");
 
@@ -77,7 +77,8 @@ window.onload = function() {
     };
     var updateVideoProgress = function(e) {
         e.preventDefault();
-        progress.value = (video.currentTime / video.duration) * 100;
+        //progress.value = (video.currentTime / video.duration) * 100;
+        progress.value = (video.currentTime * 100) / video.duration;
     };
     /*
         SOUND
@@ -85,12 +86,12 @@ window.onload = function() {
     var playerMuteToggle = function(e) {
         if (video.muted) {
             video.muted = false;
-            muteOnOffSpan.classList.add('glyphicon-volume-off');
-            muteOnOffSpan.classList.remove('glyphicon-volume-down');
+            muteOnOffSpan.classList.remove('glyphicon-volume-off');
+            muteOnOffSpan.classList.add('glyphicon-volume-down');
         } else {
             video.muted = true;
-            muteOnOffSpan.classList.add('glyphicon-volume-down');
-            muteOnOffSpan.classList.remove('glyphicon-volume-off'); 
+            muteOnOffSpan.classList.remove('glyphicon-volume-down');
+            muteOnOffSpan.classList.add('glyphicon-volume-off'); 
         }
     };
     var playerVolumeControl = function(e) {
@@ -106,7 +107,7 @@ window.onload = function() {
     startBtn.addEventListener('click', playerStart, false);
     endBtn.addEventListener('click', playerEnd, false);
     fullscreenBtn.addEventListener('click', playerFullScreen, false);
-    muteOnOffBtn.addEventListener('click', playerMuteToggle, false);
+    muteBtn.addEventListener('click', playerMuteToggle, false);
     volumeSlider.addEventListener('input', playerVolumeControl, false);
 
     // Añadimos los listeners del video
