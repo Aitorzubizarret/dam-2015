@@ -7,12 +7,12 @@ window.onload = function() {
     var startBtn = document.getElementById("start");
     var endBtn = document.getElementById("end");
     var fullscreenBtn = document.getElementById("fullscreen");
-    var muteOnOffBtn = document.getElementById("muteOnOff");
+    var muteBtn = document.getElementById("mute");
     var volumeSlider = document.getElementById("volumeRange");
 
     // Span de los botones
     var playPauseBtnSpan = document.getElementById("playPauseBtnText");
-    var muteOnOffSpan = document.getElementById("muteOnOffBtnIcon");
+    var muteOnOffSpan = document.getElementById("muteBtnIcon");
 
     var progress = document.getElementById("progress");
 
@@ -20,7 +20,14 @@ window.onload = function() {
     var video = document.getElementById("video");
     var videoClick = document.getElementById("videoClick");
 
+    // Capturamos los LIs
+    var playlistUL = document.getElementById("playlist");
+
     // Funciones
+    var playVideo = function(e) {
+        e.preventDefault();
+        console.log("can play");
+    };
     var playerPlayPause = function(e) {
         e.preventDefault();
         if (video.paused) {
@@ -36,11 +43,15 @@ window.onload = function() {
     var showBrieflyPlayPause = function(e) {
         e.preventDefault();
         if (video.paused) {
-            videoClick.classList.add('show');
-            videoClick.classList.remove('hide');
+            videoClick.classList.remove('hideIt');
+            videoClick.classList.add('showIt');
+            videoClick.classList.remove('glyphicon-play');
+            videoClick.classList.add('glyphicon-pause');
         } else {
-            videoClick.classList.add('hide');
-            videoClick.classList.remove('show');
+            videoClick.classList.remove('showIt');
+            videoClick.classList.add('hideIt');
+            videoClick.classList.remove('glyphicon-pause');
+            videoClick.classList.add('glyphicon-play');
         }
     };
     var updateControls = function(e) {
@@ -77,7 +88,9 @@ window.onload = function() {
     };
     var updateVideoProgress = function(e) {
         e.preventDefault();
-        progress.value = (video.currentTime * 100)/video.duration;
+        //progress.value = (video.currentTime / video.duration) * 100;
+        //progress.value = (video.currentTime * 100) / video.duration;
+        progress.value = 50;
     };
     /*
         SOUND
@@ -85,34 +98,45 @@ window.onload = function() {
     var playerMuteToggle = function(e) {
         if (video.muted) {
             video.muted = false;
-            muteOnOffSpan.classList.add('glyphicon-volume-off');
-            muteOnOffSpan.classList.remove('glyphicon-volume-down');
+            muteOnOffSpan.classList.remove('glyphicon-volume-off');
+            muteOnOffSpan.classList.add('glyphicon-volume-down');
         } else {
             video.muted = true;
-            muteOnOffSpan.classList.add('glyphicon-volume-down');
-            muteOnOffSpan.classList.remove('glyphicon-volume-off'); 
+            muteOnOffSpan.classList.remove('glyphicon-volume-down');
+            muteOnOffSpan.classList.add('glyphicon-volume-off'); 
         }
     };
     var playerVolumeControl = function(e) {
+        e.preventDefault();
         video.volume = volumeSlider.value/100;
-
+    };
+    /*
+        PLAYLIST
+    */
+    var changeVideoSource = function(e) {
+        e.preventDefault();
+        console.log(playlistUL);
     };
 
     // Añadimos los listeners a cada botón para que ejecuten su función cuando son pulsados
     playPauseBtn.addEventListener('click', playerPlayPause, false);
+    playPauseBtn.addEventListener('click', showBrieflyPlayPause, false);
     stopBtn.addEventListener('click', playerStop, false);
     forwardBtn.addEventListener('click', playerForward, false);
     rewindBtn.addEventListener('click', playerRewind, false);
     startBtn.addEventListener('click', playerStart, false);
     endBtn.addEventListener('click', playerEnd, false);
     fullscreenBtn.addEventListener('click', playerFullScreen, false);
-    muteOnOffBtn.addEventListener('click', playerMuteToggle, false);
+    muteBtn.addEventListener('click', playerMuteToggle, false);
     volumeSlider.addEventListener('input', playerVolumeControl, false);
 
     // Añadimos los listeners del video
-    //video.addEventListener('canplay', )
+    video.addEventListener('canplay', playVideo, false);
     video.addEventListener('progress', updateVideoProgress, false);
     video.addEventListener('ended', updateControls, false);
     video.addEventListener('click', playerPlayPause, false);
     video.addEventListener('click', showBrieflyPlayPause, false);
+
+    // Añadimos los listeners del playlist
+    playlistUL.addEventListener('click', changeVideoSource, false);
 };

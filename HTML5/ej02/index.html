@@ -6,6 +6,7 @@
     <!-- BOOTSTRAP Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="../../CSS%203/prefixfree.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -33,7 +34,7 @@
                     <span class="glyphicon glyphicon-forward"></span>
                 </button>
                 <button id="start">
-                    <span class="glyphicon glyphicon-fast-backward"></span>
+                    <span class="glyphicon glyphicon-step-backward"></span>
                 </button>
                 <button id="end">
                     <span class="glyphicon glyphicon-step-forward"></span>
@@ -41,18 +42,18 @@
                 <button id="fullscreen">
                     <span class="glyphicon glyphicon-fullscreen"></span>
                 </button>
-                <button id="muteOnOff">
-                    <span id="muteOnOffBtnIcon" class="glyphicon glyphicon-volume-down"></span>
+                <button id="mute">
+                    <span id="muteBtnIcon" class="glyphicon glyphicon-volume-down"></span>
                 </button>
                 <input id="volumeRange" type="range" value=100>
             </form>
             <progress id="progress" min="0" max="100"></progress>
-            <span id="videoClick" class="glyphicon glyphicon-play hide"></span>
+            <span id="videoClick" class="glyphicon glyphicon-play "></span>
         </div>
-        <ul>
-            <li>Teahupoo</li>
-            <li>BMX</li>
-            <li>F1</li>
+        <ul class="playlist" id="playlist">
+            <li data-src="assets/multimedia/one">Teahupoo</li>
+            <li data-src="assets/multimedia/two">BMX</li>
+            <li data-src="assets/multimedia/three">F1</li>
         </ul>
     </div>
     <script src="assets/js/main.js"></script>
