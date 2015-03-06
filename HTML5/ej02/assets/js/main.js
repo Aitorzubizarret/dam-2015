@@ -89,8 +89,8 @@ window.onload = function() {
     var updateVideoProgress = function(e) {
         e.preventDefault();
         //progress.value = (video.currentTime / video.duration) * 100;
-        //progress.value = (video.currentTime * 100) / video.duration;
-        progress.value = 50;
+        progress.value = (video.currentTime * 100) / video.duration;
+        //progress.value = 50;
     };
     /*
         SOUND
