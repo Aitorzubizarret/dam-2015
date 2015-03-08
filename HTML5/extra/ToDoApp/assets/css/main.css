@@ -1,0 +1,61 @@
+body {
+	background: #f9f9f9;
+}
+.wrapper {
+	width: 50%;
+	margin: 10px auto;
+	border: 1px solid #e1e1e5;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 1px 7px -1px #E7E7E8;
+}
+.wrapper h1 {
+	text-align: center;
+	padding: 25px 0;
+	margin: 0;
+	color: #aaa;
+}
+/*
+	Formulario
+*/
+.taskForm {
+	padding: 10px;
+	border-top: 1px solid #e1e1e5;
+	border-bottom: 1px solid #e1e1e5;
+}
+#taskInput {
+	width: 85%;
+}
+#addBtn {
+	width: 30px;
+	border-radius: 0;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #999;
+}
+
+/*
+	Lista de tareas
+*/
+#taskList {
+	list-style: none;
+	margin: 0;
+	padding: 10px;
+}
+#taskList li {
+	border-top: 1px dashed #e1e1e5;
+	padding: 10px;
+}
+#taskList li:first-child {
+	border: 0;
+}
+.delete {
+	border: 1px solid #999;
+	padding: 0 6px;
+	margin-right: 10px;
+	border-radius: 4px;
+}
+.taskDone {
+	text-decoration: line-through;
+	color: #999;
+}
