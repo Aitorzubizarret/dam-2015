@@ -11,12 +11,14 @@
 	// Funciones
 	var loadSavedTodos = function() {
 		for (var i = 1; i <= storage.length; i++) {
-			createTodo(storage.getItem(prefix + i));
-		};
+			if (storage.getItem(prefix + i)) {
+				createTodo(storage.getItem(prefix + i));
+			}
+		}
 	};
 	var addTodoToList = function(e) {
 		e.preventDefault();
-		if (newTodoInput.value.trim() != '') {
+		if (newTodoInput.value.trim() !== '') {
 			createTodoAndSave(newTodoInput.value.trim());
 
 			// Limpiamos el input para que pueda meter nuevas tareas
