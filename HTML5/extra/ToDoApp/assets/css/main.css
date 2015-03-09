@@ -2,11 +2,10 @@ body {
 	background: #f9f9f9;
 }
 .wrapper {
-	width: 50%;
-	margin: 10px auto;
-	border: 1px solid #e1e1e5;
+	width: 100%;
+	margin: 0;
+	border-bottom: 1px solid #e1e1e5;
 	background: #fff;
-	border-radius: 4px;
 	box-shadow: 0 1px 7px -1px #E7E7E8;
 }
 .wrapper h1 {
@@ -18,17 +17,16 @@ body {
 /*
 	Formulario
 */
-.taskForm {
+.todoForm {
 	padding: 10px;
 	border-top: 1px solid #e1e1e5;
 	border-bottom: 1px solid #e1e1e5;
 }
-#taskInput {
+#todoInput {
 	width: 85%;
 }
 #addBtn {
 	width: 30px;
-	border-radius: 0;
 	border: 1px solid #ccc;
 	background: #fff;
 	color: #999;
@@ -37,16 +35,17 @@ body {
 /*
 	Lista de tareas
 */
-#taskList {
+#todoList {
 	list-style: none;
 	margin: 0;
 	padding: 10px;
 }
-#taskList li {
+#todoList li {
 	border-top: 1px dashed #e1e1e5;
 	padding: 10px;
+	color: #888;
 }
-#taskList li:first-child {
+#todoList li:first-child {
 	border: 0;
 }
 .delete {
@@ -55,7 +54,7 @@ body {
 	margin-right: 10px;
 	border-radius: 4px;
 }
-.taskDone {
+.todoDone {
 	text-decoration: line-through;
-	color: #999;
+	color: #ccc;
 }
