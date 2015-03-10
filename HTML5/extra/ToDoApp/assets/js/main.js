@@ -35,10 +35,16 @@
 		var newTodoText = document.createElement("span");
 		newTodoText.innerText = todoText;
 
-		// Creamos un nuevo elemento (li) para la lista e insertamos en él el checkbox y el span.
+		// Creamos un botón para eliminar la tarea
+		var newDeleteBtn = document.createElement("button");
+		newDeleteBtn.classList.add("deleteBtn");
+		newDeleteBtn.innerText = "-";
+
+		// Creamos un nuevo elemento (li) para la lista e insertamos en él los elementos de arriba.
 		var newTodo = document.createElement("li");
 		newTodo.appendChild(newCheckbox);
 		newTodo.appendChild(newTodoText);
+		newTodo.appendChild(newDeleteBtn);
 
 		// Insertamos en el UL el nuevo elemento LI que hemos creado.
 		todoList.appendChild(newTodo);
@@ -59,7 +65,10 @@
 			} else {
 				textSpan[0].classList.remove("todoDone");
 			}
+		} else if (e.target.name === 'submit') {
+			console.log("hi");
 		}
+		console.log(e.target.type);
 	};
 
 	// Listeners
