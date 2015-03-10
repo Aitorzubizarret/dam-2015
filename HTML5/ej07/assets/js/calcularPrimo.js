@@ -14,7 +14,7 @@ function getPrimes(max) {
 
 // Listener
 self.addEventListener("message", function(e) {
-    // Cogeremos el valor del mensaje en e.data
+    // Cogeremos el valor del mensaj    e en e.data
     //console.log(getPrimes(e.data));
 
     // Enviamos el resultado de vuelta en un mensaje
