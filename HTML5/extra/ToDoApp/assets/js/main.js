@@ -90,7 +90,6 @@
 			key = 1;
 			storage.setItem(prefix + (key), todoText);
 		}
-		
 	};
 	var toggleDoneUndone = function(e) {
 		if (e.target.type === "checkbox") {
@@ -108,4 +107,9 @@
 	todoList.addEventListener("click", toggleDoneUndone, false);
 	todoList.addEventListener("click", deleteTodoFromList, false);
 	window.addEventListener("load", loadSavedTodos, false);
+
+	/*
+		Notas:
+		http://stackoverflow.com/questions/8340845/html5-localstorage-key-order
+	*/
 })();
