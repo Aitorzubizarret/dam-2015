@@ -10,10 +10,21 @@
 	
 	// Funciones
 	var loadSavedTodos = function() {
-		for (var i = 1; i <= storage.length; i++) {
-			if (storage.getItem(prefix + i)) {
-				createTodo(storage.getItem(prefix + i));
+		var key, value;
+		var condition = new RegExp("^" + prefix); 
+		for (var i = 0; i < storage.length; i++) {
+			key = storage.key(i);
+			value = storage[key];
+			if (condition.test(key)) {
+				console.log(value);
+				createTodo(storage.getItem(key));
 			}
+			/*
+			if (/^toDos-/.test(key)) {
+				console.log(value);
+				createTodo(storage.getItem(key));
+			}
+			*/
 		}
 	};
 	var addTodoToList = function(e) {
