@@ -19,12 +19,6 @@
 				console.log(value);
 				createTodo(storage.getItem(key));
 			}
-			/*
-			if (/^toDos-/.test(key)) {
-				console.log(value);
-				createTodo(storage.getItem(key));
-			}
-			*/
 		}
 	};
 	var addTodoToList = function(e) {
@@ -84,7 +78,19 @@
 		saveTodo(todoText);
 	};
 	var saveTodo = function(todoText) {
-		storage.setItem(prefix + (storage.length+1), todoText);
+		var key;
+		if (storage.length > 0) {
+			console.log(">0");
+			key = storage.key(storage.length-1);
+			key = key.replace(prefix, "");
+			key = parseInt(key);
+			key = key + 1;
+			storage.setItem(prefix + (key), todoText);
+		} else {
+			key = 1;
+			storage.setItem(prefix + (key), todoText);
+		}
+		
 	};
 	var toggleDoneUndone = function(e) {
 		if (e.target.type === "checkbox") {
