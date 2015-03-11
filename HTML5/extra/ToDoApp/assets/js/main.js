@@ -25,6 +25,24 @@
 			newTodoInput.value = "";
 		}
 	};
+	var deleteTodoFromList = function(e) {
+		if (e.target.type === "submit") {
+			var li = e.target.parentNode;
+			console.log(li);
+			var span = e.target.parentNode.getElementsByTagName("span");
+			console.log(span);
+			var text = span[0].innerText;
+			var key, value;
+			for (var i = 0; i < storage.length; i++) {
+				key = storage.key(i);
+				value = storage[key];
+				if (text === value) {
+					storage.removeItem(key);
+					todoList.removeChild(li);
+				}
+			}
+		}
+	};
 	var createTodo = function(todoText) {
 		// Creamos un checkbox, que servirá para marcar que la tarea esta completada.
 		var newCheckbox = document.createElement("input");
@@ -65,14 +83,12 @@
 			} else {
 				textSpan[0].classList.remove("todoDone");
 			}
-		} else if (e.target.name === 'submit') {
-			console.log("hi");
 		}
-		console.log(e.target.type);
 	};
 
 	// Listeners
 	addTodoBtn.addEventListener("click", addTodoToList, false);
 	todoList.addEventListener("click", toggleDoneUndone, false);
+	todoList.addEventListener("click", deleteTodoFromList, false);
 	window.addEventListener("load", loadSavedTodos, false);
 })();
