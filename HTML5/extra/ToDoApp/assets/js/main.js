@@ -24,8 +24,8 @@
 	var showToDoList = function() {
 		if (ToDos.length > 0) {
 			for (var i = 0; i < ToDos.length; i++) {
-				addToDoToList(ToDos[i].text, ToDos[i].isDone)
-			};
+				addToDoToList(ToDos[i].text, ToDos[i].isDone);
+			}
 		}
 	};
 	var addTodo = function(e) {
@@ -53,7 +53,7 @@
 
 		// Comprobamos si la tarea esta hecha o no
 		if (isDone) {
-			newTodoText.classList.add("todoDone") // Aparecerá tachada
+			newTodoText.classList.add("todoDone"); // Aparecerá tachada
 			newCheckbox.checked = true; // El checkbox aparecera 'checked'
 		}
 
@@ -103,7 +103,7 @@
 			var posicion;
 			if (e.target.checked) {
 				span[0].classList.add("todoDone");
-				findToDoPosition(text, updateToDoStatus({"status": 1}))
+				findToDoPosition(text, updateToDoStatus({"status": 1}));
 
 				for (var i = 0; i < ToDos.length; i++) {
 					if (ToDos[i].text === text) {
@@ -151,4 +151,7 @@
 	addTodoBtn.addEventListener("click", addTodo, false);
 	todoList.addEventListener("click", deleteTodo, false);
 	todoList.addEventListener("click", toggleDoneUndone, false);
+
+	// Dataset
+	// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 })();
