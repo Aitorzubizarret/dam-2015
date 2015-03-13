@@ -3,6 +3,7 @@
 	var ToDos = []; // Aqui tendremos un array de objectos. Cada objecto será una tarea.
 	var storage = localStorage; // Tecnología que utilizaremos para guardar los datos.
 	var prefix = "ToDo";
+	var lastID; // Last ID number used in a ToDo. It'll identify any ToDO.
 
 	// Capturamos los elementos que necesitamos
 	var newTodoInput = document.getElementById("todoInput");
@@ -15,28 +16,33 @@
 			for(var i = 0; i < storage.length; i++) {
 				if (storage.key(i) === prefix) {
 					ToDos = JSON.parse(storage.getItem(storage.key(i)));
+					lastID = ToDos[ToDos.length-1].id;
+					lastID = lastID + 1;
+				} else {
+					lastID = 0;
 				}
 			}
-			//success(); // Callback. Si hay tareas guardadas en local mostrarlas.
 			showToDoList();
+		} else {
+			lastID = 0;
 		}
 	};
 	var showToDoList = function() {
 		if (ToDos.length > 0) {
 			for (var i = 0; i < ToDos.length; i++) {
-				addToDoToList(ToDos[i].text, ToDos[i].isDone);
+				addToDoToList(ToDos[i].id, ToDos[i].text, ToDos[i].isDone);
 			}
 		}
 	};
 	var addTodo = function(e) {
 		e.preventDefault();
 		if (newTodoInput.value.trim() !== '') {
-			addToDoToList(newTodoInput.value.trim(), false);
+			addToDoToList(lastID, newTodoInput.value.trim(), false);
 			saveTodo(newTodoInput.value.trim());
 			newTodoInput.value = ""; // Limpiamos el input para nuevas tareas
 		}
 	};
-	var addToDoToList = function(text, isDone) {
+	var addToDoToList = function(id, text, isDone) {
 		// Creamos un checkbox, que servirá para marcar que la tarea esta completada.
 		var newCheckbox = document.createElement("input");
 		newCheckbox.type = "checkbox";
@@ -59,6 +65,7 @@
 
 		// Creamos un nuevo elemento (li) para la lista e insertamos en él los elementos de arriba.
 		var newTodo = document.createElement("li");
+		newTodo.setAttribute('data-id', id);
 		newTodo.appendChild(newCheckbox);
 		newTodo.appendChild(newTodoText);
 		newTodo.appendChild(newDeleteBtn);
@@ -68,11 +75,13 @@
 	};
 	var saveTodo = function(text) {
 		var ToDo = {
+			id: lastID,
 			text : text,
 			isDone : false
 		};
 		ToDos.push(ToDo); // Update de array of ToDos
 		updateLocalToDos(); // Actualizar el array guardado localmente
+		lastID = lastID + 1;
 	};
 	var updateLocalToDos = function() {
 		storage.setItem(prefix, JSON.stringify(ToDos));
@@ -80,66 +89,45 @@
 	var deleteTodo = function(e) {
 		if (e.target.type === "submit") {
 			var li = e.target.parentNode;
-			var span = e.target.parentNode.getElementsByTagName("span");
-			var text = span[0].innerText;
-			var posicion;
-			for (var i = 0; i < ToDos.length; i++) {
-				if (ToDos[i].text === text) {
-					posicion = i;
-					i = ToDos.length;
-				}
-			}
-			if (posicion >= 0) {
+			var todoId = li.getAttribute('data-id');
+			getToDoPosition(todoId, function(position) {
 				todoList.removeChild(li); // Eliminar el li
-				ToDos.splice(posicion, 1); // Eliminar el objeto del array
+				ToDos.splice(position, 1); // Eliminar el objeto del array
 				updateLocalToDos(); // Actualizar el array guardado localmente
-			}
+			});
 		}
 	};
 	var toggleDoneUndone = function(e) {
 		if (e.target.type === "checkbox") {
+			var li = e.target.parentNode;
+			var todoId = li.getAttribute('data-id');
 			var span = e.target.parentNode.getElementsByTagName("span");
-			var text = span[0].innerText;
-			var posicion;
-			if (e.target.checked) {
-				span[0].classList.add("todoDone");
-				findToDoPosition(text, updateToDoStatus({"status": 1}));
 
-				for (var i = 0; i < ToDos.length; i++) {
-					if (ToDos[i].text === text) {
-						posicion = i;
-						i = ToDos.length;
-					}
-				}
-				if (posicion >= 0) {
-					ToDos[posicion].isDone = true;
+			if (e.target.checked) {
+				getToDoPosition(todoId, function(position) {
+					span[0].classList.add("todoDone");
+					ToDos[position].isDone = true;
 					updateLocalToDos();
-				}
+				});
 			} else {
-				span[0].classList.remove("todoDone");
-				for (var i = 0; i < ToDos.length; i++) {
-					if (ToDos[i].text === text) {
-						posicion = i;
-						i = ToDos.length;
-					}
-				}
-				if (posicion >= 0) {
-					ToDos[posicion].isDone = false;
+				getToDoPosition(todoId, function(position) {
+					span[0].classList.remove("todoDone");
+					ToDos[position].isDone = false;
 					updateLocalToDos();
-				}
+				});
 			}
 		}
 	};
-	var findToDoPosition = function(text, success) {
+	var getToDoPosition = function(id, success) {
 		var position;
 		for (var i = 0; i < ToDos.length; i++) {
-			if (ToDos[i].text === text) {
+			if (parseInt(ToDos[i].id) === parseInt(id)) {
 				position = i;
 				i = ToDos.length;
 			}
 		}
 		if (position >= 0) {
-			success({"position": position});
+			success(position);
 		}
 	};
 	var updateToDoStatus = function(data) {
