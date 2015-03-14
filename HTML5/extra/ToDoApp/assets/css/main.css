@@ -3,9 +3,6 @@ body {
 }
 .wrapper {
 	width: 100%;
-	border-bottom: 1px solid #e1e1e5;
-	background: #fff;
-	box-shadow: 0 1px 7px -1px #E7E7E8;
 	margin: 0;
 }
 .wrapper h1 {
@@ -47,7 +44,6 @@ body {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-
 }
 /*
 	Lista de tareas
@@ -59,14 +55,20 @@ body {
 	margin-top: 0;
 	margin-bottom: 0;
 	z-index: 1;
+	box-shadow: 0 1px 7px -1px #E7E7E8;
 }
 #todoList li {
 	border-top: 1px dashed #e1e1e5;
 	padding: 10px;
 	color: #888;
+	background-color: #fff;
 }
 #todoList li:first-child {
 	border: 0;
+}
+#todoList li:last-child {
+	border-bottom: 1px solid #e1e1e5;
+	
 }
 .delete {
 	border: 1px solid #999;
@@ -87,4 +89,15 @@ body {
 	position: absolute;
 	right: 5px;
 	color: #fff;
+}
+/*
+	Develop By
+*/
+.developBy {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.65em;
+	color: #ccc;
+	padding: 15px 0 60px 0;
 }

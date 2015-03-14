@@ -3,7 +3,7 @@
 	var ToDos = []; // Aqui tendremos un array de objectos. Cada objecto será una tarea.
 	var storage = localStorage; // Tecnología que utilizaremos para guardar los datos.
 	var prefix = "ToDo";
-	var lastID; // Last ID number used in a ToDo. It'll identify any ToDO.
+	var lastID = 0; // Last ID number used in a ToDo. It'll identify any ToDO.
 
 	// Capturamos los elementos que necesitamos
 	var newTodoInput = document.getElementById("todoInput");
@@ -11,30 +11,27 @@
 	var todoList = document.getElementById("todoList");
 	
 	// Funciones
-	var getToDos = function() {
+	var getSavedToDos = function() {
 		if (storage.length > 0) {
 			for(var i = 0; i < storage.length; i++) {
 				if (storage.key(i) === prefix) {
 					ToDos = JSON.parse(storage.getItem(storage.key(i)));
 					lastID = ToDos[ToDos.length-1].id;
 					lastID = lastID + 1;
-				} else {
-					lastID = 0;
+					console.log(lastID);
 				}
 			}
-			showToDoList();
-		} else {
-			lastID = 0;
+			showSavedToDos();
 		}
 	};
-	var showToDoList = function() {
+	var showSavedToDos = function() {
 		if (ToDos.length > 0) {
 			for (var i = 0; i < ToDos.length; i++) {
 				addToDoToList(ToDos[i].id, ToDos[i].text, ToDos[i].isDone);
 			}
 		}
 	};
-	var addTodo = function(e) {
+	var addToDo = function(e) {
 		e.preventDefault();
 		if (newTodoInput.value.trim() !== '') {
 			addToDoToList(lastID, newTodoInput.value.trim(), false);
@@ -97,27 +94,6 @@
 			});
 		}
 	};
-	var toggleDoneUndone = function(e) {
-		if (e.target.type === "checkbox") {
-			var li = e.target.parentNode;
-			var todoId = li.getAttribute('data-id');
-			var span = e.target.parentNode.getElementsByTagName("span");
-
-			if (e.target.checked) {
-				getToDoPosition(todoId, function(position) {
-					span[0].classList.add("todoDone");
-					ToDos[position].isDone = true;
-					updateLocalToDos();
-				});
-			} else {
-				getToDoPosition(todoId, function(position) {
-					span[0].classList.remove("todoDone");
-					ToDos[position].isDone = false;
-					updateLocalToDos();
-				});
-			}
-		}
-	};
 	var getToDoPosition = function(id, success) {
 		var position;
 		for (var i = 0; i < ToDos.length; i++) {
@@ -130,16 +106,33 @@
 			success(position);
 		}
 	};
-	var updateToDoStatus = function(data) {
-		console.log("El elemento esta en " + data.position + " y su estado es " + data.status);
+	var toggleDoneUndone = function(e) {
+		if (e.target.type === "checkbox") {
+			var li = e.target.parentNode;
+			var todoId = li.getAttribute('data-id');
+			var span = e.target.parentNode.getElementsByTagName("span");
+			updateToDoStatus(e.target.checked, todoId, span);
+		}
+	};
+	var updateToDoStatus = function(status, todoId, span) {
+		if (status) {
+			getToDoPosition(todoId, function(position) {
+				span[0].classList.add("todoDone");
+				ToDos[position].isDone = true;
+				updateLocalToDos();
+			});
+		} else {
+			getToDoPosition(todoId, function(position) {
+				span[0].classList.remove("todoDone");
+				ToDos[position].isDone = false;
+				updateLocalToDos();
+			});
+		}
 	};
 
 	// Listeners
-	window.addEventListener("load", getToDos, false);
-	addTodoBtn.addEventListener("click", addTodo, false);
+	window.addEventListener("load", getSavedToDos, false);
+	addTodoBtn.addEventListener("click", addToDo, false);
 	todoList.addEventListener("click", deleteTodo, false);
 	todoList.addEventListener("click", toggleDoneUndone, false);
-
-	// Dataset
-	// https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 })();
