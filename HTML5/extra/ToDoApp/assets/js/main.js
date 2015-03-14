@@ -16,9 +16,7 @@
 			for(var i = 0; i < storage.length; i++) {
 				if (storage.key(i) === prefix) {
 					ToDos = JSON.parse(storage.getItem(storage.key(i)));
-					lastID = ToDos[ToDos.length-1].id;
-					lastID = lastID + 1;
-					console.log(lastID);
+					lastID = parseInt(ToDos[ToDos.length-1].id) + 1;
 				}
 			}
 			showSavedToDos();
@@ -76,8 +74,8 @@
 			text : text,
 			isDone : false
 		};
-		ToDos.push(ToDo); // Update de array of ToDos
-		updateLocalToDos(); // Actualizar el array guardado localmente
+		ToDos.push(ToDo); // Add the new ToDo to the array
+		updateLocalToDos(); // Update the array of ToDos locally
 		lastID = lastID + 1;
 	};
 	var updateLocalToDos = function() {
