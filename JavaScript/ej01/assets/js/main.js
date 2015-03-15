@@ -90,5 +90,4 @@
     console.log(validarDNI("00000009d") === true);
     console.log(validarDNI("00000010x") === true);
     console.log(validarDNI("12345678z") === true);
-
 })();
