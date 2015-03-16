@@ -9,7 +9,7 @@ angular.module('todo', ['ionic'])
   ];
 
   // Crea una pantalla modal, define su plantilla, su animación, y la añade al $scope para poder llamarla desde cualquier lado
-  $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
+  $ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
     $scope.taskModal = modal; // Añade la pantalla modal al $scope
   }, {
     scope: $scope,
@@ -25,11 +25,13 @@ angular.module('todo', ['ionic'])
     $scope.taskModal.hide(); // Oculta la pantalla modal
   };
   $scope.createTask = function(task) {
-    // Añade una nueva tarea al array, y como título pondrá el que se ha escrito en el input del formulario
-    $scope.tasks.push({
-      title: task.title
-    });
-    $scope.exitModal(); // Oculta la pantalla modal
-    task.title = ''; // Vacia el input para poder crear otra tarea
+    if (task) { // Comprobamos que el usuario ha escrito algo en el input antes de darle a "Crear tarea"
+      // Añade una nueva tarea al array, y como título pondrá el que se ha escrito en el input del formulario
+      $scope.tasks.push({
+        title: task.title
+      });
+      $scope.exitModal(); // Oculta la pantalla modal
+      task.title = ''; // Vacia el input para poder crear otra tarea
+    }
   };
 });
