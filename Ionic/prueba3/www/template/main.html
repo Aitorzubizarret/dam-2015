@@ -1,11 +1,13 @@
 <ion-view view-title="Cooking Calendar">
 	<ion-content>
-		<ion-list>
-			<ion-item href="#/info">Plato 1</ion-item>
-			<ion-item href="#/info">Plato 2</ion-item>
-			<ion-item href="#/info">Plato 3</ion-item>
-			<ion-item href="#/info">Plato 4</ion-item>
-			<ion-item href="#/info">Plato 5</ion-item>
-		</ion-list>
+		<div ng-controller="listController as list">
+			<ion-list>
+				<ion-item href="#/info">{{list.product.title}}</ion-item>
+				<ion-item href="#/info">Plato 2</ion-item>
+				<ion-item href="#/info">Plato 3</ion-item>
+				<ion-item href="#/info">Plato 4</ion-item>
+				<ion-item href="#/info">Plato 5</ion-item>
+			</ion-list>
+		</div>
 	</ion-content>
 </ion-view>
